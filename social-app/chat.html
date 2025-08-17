@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>گفتگو - Social App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="profile.html">پروفایل</a>
+      <a href="videos.html">ویدیوها</a>
+      <a href="chat.html">گفتگو</a>
+      <a href="upload.html">آپلود</a>
+      <a href="login.html">ورود</a>
+    </nav>
+    <h1>گفتگو</h1>
+  </header>
+  <main>
+    <section id="chat">
+      <h2>اتاق گفتگو</h2>
+      <div id="messages" style="height:200px;overflow-y:scroll;border:1px solid #eee;padding:10px;background:#fafafa"></div>
+      <input type="text" id="msgInput" placeholder="پیام خود را بنویسید...">
+      <button onclick="sendMsg()">ارسال</button>
+    </section>
+    <script>
+      function sendMsg() {
+        var msg = document.getElementById('msgInput').value;
+        if (msg.trim() !== '') {
+          var messages = document.getElementById('messages');
+          messages.innerHTML += '<div>' + msg + '</div>';
+          document.getElementById('msgInput').value = '';
+        }
+      }
+    </script>
+  </main>
+</body>
+</html>
